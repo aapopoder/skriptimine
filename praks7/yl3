@@ -1,0 +1,32 @@
+#!/bin/bash
+# Skript väljastab tärnidest ristküliku, mille keskel on tühi ala.
+
+echo -n "Sisesta ridade arv: "
+read read
+
+echo -n "Sisesta tärnide arv reas: "
+read tarnid
+
+for (( i=1; i<=read; i++ ))
+do
+    echo -n "$i. "
+
+    if [ $i -eq 1 ] || [ $i -eq $read ]
+    then
+        for (( j=1; j<=tarnid; j++ ))
+        do
+            echo -n "* "
+        done
+    else
+        echo -n "* "
+
+        for (( j=2; j<tarnid; j++ ))
+        do
+            echo -n "  "
+        done
+
+        echo -n "*"
+    fi
+
+    echo
+done
