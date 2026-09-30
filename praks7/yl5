@@ -1,0 +1,22 @@
+#!/bin/bash
+# Skript väljastab kujundi, kus iga järgmise rea alguses on üks o vähem.
+
+echo -n "Sisesta ridade arv: "
+read read
+
+for (( i=1; i<=read; i++ ))
+do
+    echo -n "$i. "
+
+    for (( j=1; j<=read-i; j++ ))
+    do
+        echo -n "o "
+    done
+
+    for (( j=1; j<=i; j++ ))
+    do
+        echo -n "* "
+    done
+
+    echo
+done
