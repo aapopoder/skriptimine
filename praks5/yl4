@@ -1,0 +1,20 @@
+#!/bin/bash
+# Skript tervitab kasutajat vastavalt süsteemi kellaajale ja kasutaja nimele.
+
+echo -n "Sisesta oma ees- ja perenimi: "
+read eesnimi perenimi
+
+aeg=$(date +%H)
+
+if [ $aeg -ge 6 ] && [ $aeg -lt 12 ]
+then
+    echo "Tere hommikust, $eesnimi $perenimi!"
+elif [ $aeg -ge 12 ] && [ $aeg -lt 18 ]
+then
+    echo "Tere päevast, $eesnimi $perenimi!"
+elif [ $aeg -ge 18 ] && [ $aeg -lt 22 ]
+then
+    echo "Tere õhtust, $eesnimi $perenimi!"
+else
+    echo "Head ööd, $eesnimi $perenimi!"
+fi
